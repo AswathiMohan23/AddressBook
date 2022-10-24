@@ -6,11 +6,15 @@ import java.util.Scanner;
 public class AddressBookMain {
 
     static Scanner sc = new Scanner(System.in);
+    static Details person1 = new Details("tom", "john", "Trivandrum", "1234", "912345678");
+    static Details person2 = new Details("Anna", "Maria", "Bangalore", "1564", "923456781");
+    static Details person3 = new Details("Linda", "Thomas", "Kozhikode", "1564", "923456781");
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book");
         System.out.println("choose the option (1 or 2) which u need : " +
-                "\n1 : enter details from console\n2 : find a person by name\n");
+                "\n1 : enter details from console\n2 : find a person by name\n"+"3 : delete details by using name\n");
         int option = sc.nextInt();
         switch (option) {
             case 1:
@@ -20,13 +24,15 @@ public class AddressBookMain {
                 System.out.println("select the name : ");
                 String byName = sc.next();
                 searchByName(byName);
+                break;
+            case 3:
+                System.out.println("select the name : ");
+                byName = sc.next();
+                delete(byName);
         }
     }
     public static void savedDetails(String byName) {
         String name=byName.toUpperCase();
-        Details person1 = new Details("tom", "john", "Trivandrum", "1234", "912345678");
-        Details person2 = new Details("Anna", "Maria", "Bangalore", "1564", "923456781");
-        Details person3 = new Details("Linda", "Thomas", "Kozhikode", "1564", "923456781");
         System.out.println("Address book contacts :\n" + person1.toString() + "\n" + person2.toString() + "\n" + person3.toString());
         if (name.equals(person1.getFirstName().toUpperCase()))
             System.out.println("\nThe searched name is " + byName + " and the details are : " +
@@ -43,6 +49,9 @@ public class AddressBookMain {
 
     public static void searchByName(String byName) {
         savedDetails(byName);
+    }
+    public static void delete(String byName){
+
     }
 
     public static void enterTheDetails() {
