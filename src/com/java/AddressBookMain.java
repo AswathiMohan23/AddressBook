@@ -16,32 +16,32 @@ public class AddressBookMain {
         System.out.println("choose the option (1 or 2) which u need : " +
                 "\n1 : enter details from console\n2 : find a person by name\n"+"3 : delete details by using name\n");
         int option = sc.nextInt();
+        System.out.println("Address book contacts :\n" + person1.toString() + "\n" + person2.toString() + "\n" + person3.toString());
+
         switch (option) {
             case 1:
                 enterTheDetails();
                 break;
             case 2:
                 System.out.println("select the name : ");
-                String byName = sc.next();
+                String byName = sc.next().toUpperCase();
                 searchByName(byName);
                 break;
             case 3:
                 System.out.println("select the name : ");
-                byName = sc.next();
+                byName = sc.next().toUpperCase();
                 delete(byName);
         }
     }
-    public static void savedDetails(String byName) {
-        String name=byName.toUpperCase();
-        System.out.println("Address book contacts :\n" + person1.toString() + "\n" + person2.toString() + "\n" + person3.toString());
+    public static void savedDetails(String name) {
         if (name.equals(person1.getFirstName().toUpperCase()))
-            System.out.println("\nThe searched name is " + byName + " and the details are : " +
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
                     "\n=================================================\n\n" + person1.toString()+"\n");
         else if (name.equals(person2.getFirstName().toUpperCase()))
-            System.out.println("\nThe searched name is " + byName + " and the details are : " +
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
                     "\n=================================================\n\n" + person2.toString()+"\n");
         else if (name.equals(person3.getFirstName().toUpperCase()))
-            System.out.println("\nThe searched name is " + byName + " and the details are : " +
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
                     "\n=================================================\n\n" + person3.toString()+"\n");
         else
             System.out.println("wrong entry");
@@ -50,9 +50,26 @@ public class AddressBookMain {
     public static void searchByName(String byName) {
         savedDetails(byName);
     }
-    public static void delete(String byName){
-
+    public static void delete(String name){
+        if (name.equals(person1.getFirstName().toUpperCase())) {
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
+                    "\n=================================================\n\n" + person1.toString() + "\n");
+            System.out.println("deleting details of "+name+"...........\n");
+            System.out.println("Updated address book :\n========================\n\n" +person2.toString()+"\n"+person3.toString()+"\n");
+        }else if (name.equals(person2.getFirstName().toUpperCase())) {
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
+                    "\n=================================================\n\n" + person2.toString() + "\n");
+            System.out.println("deleting details of "+name+"...........\n");
+            System.out.println("Updated address book :\n========================\n\n" +person1.toString()+"\n"+person3.toString()+"\n");
+        }else if (name.equals(person3.getFirstName().toUpperCase())) {
+            System.out.println("\nThe searched name is " + name + " and the details are : " +
+                    "\n=================================================\n\n" + person3.toString() + "\n");
+            System.out.println("deleting details of "+name+"...........\n");
+            System.out.println("Updated address book :\n==========================\n\n" +person1.toString()+"\n"+person2.toString());
+        }else
+            System.out.println("wrong entry");
     }
+
 
     public static void enterTheDetails() {
         System.out.println("Enter the First name : ");
