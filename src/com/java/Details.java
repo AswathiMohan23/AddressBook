@@ -3,14 +3,14 @@ package com.java;
 import java.time.LocalDate;
 
 public class Details {
-    private String name;
+    private String firstName;
     private String address;
     private String zipCode;
     private String mobileNumber;
     private String lastName;
 
-    public Details(String name, String address, String zipCode, String mobileNumber, String lastName) {
-        this.name = name;
+    public Details(String firstName, String lastName,String address, String zipCode, String mobileNumber) {
+        this.firstName = firstName;
         this.address = address;
         this.zipCode = zipCode;
         this.mobileNumber = mobileNumber;
@@ -25,12 +25,12 @@ public class Details {
         this.lastName = lastName;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = firstName;
     }
 
     public String getAddress() {
@@ -60,12 +60,13 @@ public class Details {
     @Override
     public String toString() {
         return "Details{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", mobileNumber='" + mobileNumber + '\'' +
-                ", lastName='" + lastName + '\'' +
+                " firstName ='" + firstName + '\'' +
+                ", lastName ='" + lastName + '\'' +
+                ", address ='" + address + '\'' +
+                ", zipCode ='" + zipCode + '\'' +
+                ", mobileNumber ='" + mobileNumber + '\'' +" "+
                 '}';
     }
+
 
 }
