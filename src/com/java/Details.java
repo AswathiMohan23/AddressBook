@@ -4,17 +4,24 @@ import java.time.LocalDate;
 
 public class Details {
     private String firstName;
+    private String lastName;
     private String address;
+    private String state;
+    private String city;
+    private String email;
     private String zipCode;
     private String mobileNumber;
-    private String lastName;
 
-    public Details(String firstName, String lastName,String address, String zipCode, String mobileNumber) {
+
+    public Details(String firstName, String lastName, String address, String state, String city, String email, String zipCode, String mobileNumber) {
         this.firstName = firstName;
+        this.lastName = lastName;
         this.address = address;
+        this.state = state;
+        this.city = city;
+        this.email = email;
         this.zipCode = zipCode;
         this.mobileNumber = mobileNumber;
-        this.lastName = lastName;
     }
 
     public String getLastName() {
@@ -60,13 +67,17 @@ public class Details {
     @Override
     public String toString() {
         return "Details{" +
-                " firstName ='" + firstName + '\'' +
-                ", lastName ='" + lastName + '\'' +
-                ", address ='" + address + '\'' +
-                ", zipCode ='" + zipCode + '\'' +
-                ", mobileNumber ='" + mobileNumber + '\'' +" "+
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", state='" + state + '\'' +
+                ", city='" + city + '\'' +
+                ", email='" + email + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
                 '}';
     }
-
-
 }
+
+
+
